@@ -1,5 +1,5 @@
 # HSZ
-Stima sassi nell' HSZ
+Quantitative stimation of debris contentent in HSZ
 
 HSZ/cut_5278 
 >contains sample routine for running simulations on Cineca m100

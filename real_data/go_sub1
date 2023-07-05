@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=128
+#SBATCH --gres=gpu:4
+#SBATCH --mem=246000
+#SBATCH --account=uTS21_roncoron
+#SBATCH -p m100_usr_prod
+#SBATCH --qos=m100_qos_dbg
+#####SBATCH -p m100_usr_preempt
+#SBATCH --time 2:00:00
+#SBATCH --error=./out/test_0.err
+#SBATCH --output=./out/test_0.out
+#SBATCH --job-name=cut_5278
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=g.roncoroni@hotmail.com
+
+cd $SLURM_SUBMIT_DIR
+
+module load autoload cuda
+
+ulimit -s unlimited
+./run_model.sh
+
+
